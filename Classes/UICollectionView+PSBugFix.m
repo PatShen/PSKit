@@ -1,16 +1,16 @@
 //
-//  UICollectionView+BugFix.m
+//  UICollectionView+PSBugFix.m
 //  Pods-PSKitPrj
 //
 //  Created by 沈闻欣 on 2021/8/2.
 //  Copyright © 2021 swx. All rights reserved.
 //
 
-#import "UICollectionView+BugFix.h"
+#import "UICollectionView+PSBugFix.h"
 #import <objc/runtime.h>
 
 // fix bug see: https://developer.apple.com/forums/thread/663156
-@implementation UICollectionView (BugFix)
+@implementation UICollectionView (PSBugFix)
 
 + (void)load {
     static dispatch_once_t onceToken;

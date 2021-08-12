@@ -1,5 +1,5 @@
 //
-//  UICollectionView+BugFix.h
+//  UICollectionView+PSBugFix.h
 //  Pods-PSKitPrj
 //
 //  Created by 沈闻欣 on 2021/8/2.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UICollectionView (BugFix)
+@interface UICollectionView (PSBugFix)
 
 @end
 
