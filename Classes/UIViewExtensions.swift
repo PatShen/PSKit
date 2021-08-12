@@ -17,7 +17,8 @@ fileprivate var tapClosureKey = "tapClosureKey"
 public extension UIView {
     
     func addTapGesture(_ closure: @escaping (UITapGestureRecognizer) -> Void) {
-        var tap: UITapGestureRecognizer? = objc_getAssociatedObject(self, &tapGestureKey) as? UITapGestureRecognizer
+        var tap: UITapGestureRecognizer? =
+            objc_getAssociatedObject(self, &tapGestureKey) as? UITapGestureRecognizer
         if tap == nil {
             tap = UITapGestureRecognizer(target: self, action: #selector(__tapEventHandle(tap:)))
             if let t = tap {
@@ -31,7 +32,8 @@ public extension UIView {
     
     @objc fileprivate func __tapEventHandle(tap: UITapGestureRecognizer?) {
         if let t = tap, t.state == .recognized {
-            let closure = objc_getAssociatedObject(self, &tapClosureKey) as? (UITapGestureRecognizer) -> Void
+            let closure: ((UITapGestureRecognizer) -> Void)? =
+                objc_getAssociatedObject(self, &tapClosureKey) as? (UITapGestureRecognizer) -> Void
             closure?(t)
         }
     }
